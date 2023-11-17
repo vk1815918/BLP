@@ -100,9 +100,7 @@ class Optimizer:
             print(self.result.message)
         
     def expectedReturn(self, weights):
-        return np.asscalar(
-            np.dot(np.atleast_2d(weights), self.parameters.PiHat)
-        ) 
+        return np.dot(np.atleast_2d(weights), self.parameters.PiHat).item()
         
     def sd(self, weights):
         w = np.atleast_2d(weights)
